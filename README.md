@@ -6,7 +6,7 @@
 
 ## 🚀 Purpose
 
-This project (`ml_ops_project`) is a standalone collection of Python scripts designed to handle the **Machine Learning Operations (MLOps)** lifecycle for the `nesis_project` web application. It focuses on tasks like **data generation, preprocessing, and model training** for a Natural Language Understanding (NLU) model, intended to power a search or query understanding feature within `nesis_project`.
+This project (`ml_ops_project`) is a standalone collection of Python scripts designed to handle the **Machine Learning Operations (MLOps)** lifecycle for the `nesis_project` (EAX) web application. It focuses on tasks like **data generation, preprocessing, and model training** for a Natural Language Understanding (NLU) model, intended to power a search or query understanding feature within `nesis_project`.
 
 By keeping this separate from the main `nesis_project`, we achieve:
 * **Separation of Concerns**: Cleaner distinction between web application logic and ML pipeline.
@@ -113,10 +113,10 @@ python train_nlu_model.py
 
 When your model is trained, it is ready for testing and then deployment within the nesis_project (EAX)
 
-### Contact
+### 📞 Contact
 
 Please feel free to contact me if you have any questions.
 
-### Authors
+### ✍️ Authors
 
 - [Billy Ashmall (NASA/USRA)](https://github.com/billyz313)
