@@ -151,7 +151,7 @@ Common issues and their solutions:
 
 ## 🙏 Acknowledgments
 
-- NASA/USRA for supporting this project
+- NASA for supporting this project
 - The Hugging Face team for their transformers library
 - Contributors and maintainers of the nesis_project
 
