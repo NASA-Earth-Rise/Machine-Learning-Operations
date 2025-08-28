@@ -29,7 +29,9 @@ Before setting up this project, ensure you have:
 ### 1. Clone the Repository
 
 ```bash
-bash git clone [git@github.com:NASA-Earth-Rise/Machine-Learning-Operations.git](git@github.com:NASA-Earth-Rise/Machine-Learning-Operations.git) cd ml_ops_project
+git clone git@github.com:NASA-Earth-Rise/Machine-Learning-Operations.git ml_ops_project
+
+cd ml_ops_project
 
 ```
 
