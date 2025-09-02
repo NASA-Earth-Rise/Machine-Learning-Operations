@@ -124,6 +124,64 @@ Trains the NLU model on the preprocessed data.
 
 **Output**: Trained model and evaluation metrics
 
+## ⏰ Automated Training (Production Setup)
+For production environments, you can set up automated daily model training using the included shell script and cron job.
+
+### 1. Shell Script Setup
+The project includes run_model_training.sh which safely executes the complete pipeline:
+
+    1. Data Generation → Data Preprocessing → Model Training
+    2. Sequential Execution: Each step waits for the previous one to complete
+    3. Error Handling: Pipeline stops if any step fails
+    4. Lock File Protection: Prevents overlapping runs
+    5. Detailed Logging: Tracks progress and errors
+    6. Safe Deployment: Uses temporary directories and atomic model updates
+### 2. Setting Up the Cron Job
+To run the training pipeline automatically every day at 2:00 AM:
+
+```bash
+
+# Make the script executable
+chmod +x /path/to/ml_ops_project/run_model_training.sh
+
+# Test the script manually first
+/path/to/ml_ops_project/run_model_training.sh
+
+# Edit your crontab
+crontab -e
+
+# Add this line to run daily at 2:00 AM
+0 2 * * * /path/to/ml_ops_project/run_model_training.sh
+```
+
+### 3. Monitoring Automated Runs
+Logs: Check /path/to/ml_ops_project/logs/model_training_YYYY-MM-DD_HH-MM-SS.log
+Lock File: /path/to/ml_ops_project/.model_training.lock (should not exist when idle)
+Status Check: ps aux | grep run_model_training.sh
+### 4. Cron Job Examples
+```bash
+# Daily at 2:00 AM (recommended for low system usage)
+0 2 * * * /path/to/ml_ops_project/run_model_training.sh
+
+# Every 12 hours (2:00 AM and 2:00 PM)
+0 2,14 * * * /path/to/ml_ops_project/run_model_training.sh
+
+# Weekly on Sundays at 3:00 AM
+0 3 * * 0 /path/to/ml_ops_project/run_model_training.sh
+
+# Monthly on the 1st at 1:00 AM
+0 1 1 * * /path/to/ml_ops_project/run_model_training.sh
+```
+### 5. Production Safety Features
+The automated pipeline includes:
+
+Overlap Prevention: Won't start if previous run is still active
+Timeout Protection: Automatically terminates after 2 hours
+Automatic Cleanup: Rotates logs and removes temporary files
+Error Recovery: Detailed error reporting and graceful failure handling
+Lock File Management: Prevents resource conflicts
+
+
 ## 📊 Model Performance
 
 The NLU model typically achieves:
