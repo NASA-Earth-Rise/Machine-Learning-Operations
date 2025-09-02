@@ -46,7 +46,7 @@ conda env create -f environment.yml
 2.  **Activate the Environment**:
 
     ```bash
-    conda activate ml_ops_env
+    conda activate ml_ops_project
     ```
     You will need to activate this environment every time you work on the `ml_ops_project`.
 
