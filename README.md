@@ -63,6 +63,7 @@ Create a file named `data.json` in the project root with the following structure
       "csv_directory": "{full_path_to_directory}",
       "csv_file_name": "{name_for_training_csv}.csv",
       "training_data_directory": "{full_path_to_training_data_directory}",
+      "temp_model_save_path": "{full_path_to_temp_model_save_directory}",
       "model_save_path": "{full_path_plus_name_you_want_for_model}",
       "model_results_directory": "{full_path_for_results}",
       "model_log_directory": "{full_path_for_logs}"
@@ -72,6 +73,7 @@ Create a file named `data.json` in the project root with the following structure
     * `csv_directory`: Where generated raw CSV data will be stored.
     * `csv_file_name`: The name of the CSV file that `generate_ml_data.py` will output.
     * `training_data_directory`: Where preprocessed (tokenized, encoded) training data will be saved.
+    * `temp_model_save_path`: Where temporary model checkpoints will be saved during training.
     * `model_save_path`: The full path and desired name for saving the trained NLU model.
     * `model_results_directory`: Where model evaluation results will be stored.
     * `model_log_directory`: Where training logs (e.g., TensorBoard logs) will be stored.
